@@ -4,7 +4,272 @@
     <title>
         Astronomy "Basics"
     </title>
-    <link rel="stylesheet" href="style2.css">
+<style>
+     * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background: radial-gradient(circle at top, #0a0a1a, #000);
+            color: #d6eaf8;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* ------------------ HEADER ------------------ */
+        header {
+            background: url('https://upload.wikimedia.org/wikipedia/commons/9/99/ESO_-_Milky_Way.jpg') no-repeat center center/cover;
+            text-align: center;
+            padding: 100px 20px;
+            color: #fff;
+            position: relative;
+        }
+
+        header::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 30, 0.7);
+            backdrop-filter: blur(3px);
+        }
+
+        header h1 {
+            position: relative;
+            font-size: 3.5rem;
+            text-shadow: 0 0 15px #00ffff;
+            letter-spacing: 2px;
+            z-index: 1;
+        }
+
+        header p {
+            position: relative;
+            font-size: 1.2rem;
+            color: #aeeeff;
+            margin-top: 15px;
+            z-index: 1;
+        }
+
+        /* ------------------ NAVIGATION ------------------ */
+        nav {
+            background: #0b0c10;
+            border-bottom: 1px solid #00ffff33;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        nav li {
+            margin: 15px 25px;
+        }
+
+        nav a {
+            color: #66fcf1;
+            text-decoration: none;
+            font-weight: bold;
+            letter-spacing: 1px;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        nav a::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            height: 2px;
+            width: 0%;
+            background: #66fcf1;
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        nav a:hover {
+            color: #45a29e;
+        }
+
+        /* ------------------ SECTION BASE ------------------ */
+        section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #66fcf1;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px #00ffff66;
+        }
+
+        p, li {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #c5c6c7;
+        }
+
+        /* ------------------ CONTENT BLOCK ------------------ */
+        .content-block {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .content-block img {
+            display: block;
+            margin: 30px auto;
+            border-radius: 10px;
+            width: 90%;
+            box-shadow: 0 0 25px #00ffff33;
+            transition: transform 0.5s;
+        }
+
+        .content-block img:hover {
+            transform: scale(1.05);
+        }
+
+        .highlight {
+            color: #00ffff;
+            font-weight: bold;
+        }
+
+        /* ------------------ PLANETS ------------------ */
+        .planet-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .planet {
+            background: #1f2833;
+            border: 1px solid #00ffff33;
+            border-radius: 12px;
+            padding: 20px;
+            width: 220px;
+            box-shadow: 0 0 15px #00ffff22;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .planet:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 20px #00ffff66;
+        }
+
+        /* ------------------ LISTS ------------------ */
+        .lists {
+            background: rgba(15, 20, 30, 0.9);
+            padding: 30px;
+            margin: 50px auto;
+            border-radius: 10px;
+            width: 70%;
+            box-shadow: 0 0 25px #00ffff22;
+        }
+
+        ul, ol {
+            text-align: left;
+            margin-left: 40%;
+        }
+
+        /* ------------------ TABLE ------------------ */
+        table {
+            width: 90%;
+            margin: 40px auto;
+            border-collapse: collapse;
+            background: #101820;
+            box-shadow: 0 0 25px #00ffff33;
+        }
+
+        th, td {
+            border: 1px solid #00ffff44;
+            padding: 12px;
+        }
+
+        th {
+            background: #0b3d91;
+            color: #fff;
+        }
+
+        caption {
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #66fcf1;
+        }
+
+        /* ------------------ QUIZ FORM ------------------ */
+        form {
+            background: rgba(15, 20, 30, 0.9);
+            width: 70%;
+            margin: 40px auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 25px #00ffff22;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+            background: #0b0c10;
+            color: #c5c6c7;
+            border: 1px solid #45a29e;
+            border-radius: 6px;
+        }
+
+        input[type="submit"] {
+            background: #00ffff33;
+            color: #fff;
+            cursor: pointer;
+            border: 1px solid #00ffff99;
+            transition: 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background: #00ffff;
+            color: #000;
+            box-shadow: 0 0 15px #00ffffaa;
+        }
+
+        /* ------------------ CONTACT ------------------ */
+        #contact {
+            background: linear-gradient(to bottom, #0b0c10, #02040a);
+            padding: 60px 20px;
+        }
+
+        #contact .highlight {
+            color: #00ffff;
+        }
+
+        footer {
+            background: #000;
+            text-align: center;
+            color: #00ffffcc;
+            padding: 20px;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            border-top: 1px solid #00ffff33;
+        }
+
+        /* ------------------ ANIMATIONS ------------------ */
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 10px #00ffff; }
+            50% { text-shadow: 0 0 20px #66fcf1; }
+        }
+
+        header h1 {
+            animation: glow 3s infinite;
+        }
+</style>
 </head>
 <body>
 <header>
